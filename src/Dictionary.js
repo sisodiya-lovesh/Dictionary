@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import initialDictionary from './dictionarydata.json'; // Import JSON data
+import initialDictionary from './dictionaryData.json'; // Import JSON data
 
-const Dictionary = () => {
+const XDictionary = () => {
     // State hooks
-    const [dictionary, setDictionary] = useState(initialDictionary);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResult, setSearchResult] = useState('');
 
     // Function to handle search
     const handleSearch = () => {
         const lowercaseSearchTerm = searchTerm.toLowerCase();
-        const foundWord = dictionary.find(entry => entry.word.toLowerCase() === lowercaseSearchTerm);
+        const foundWord = initialDictionary.find(entry => entry.word.toLowerCase() === lowercaseSearchTerm);
 
         if (foundWord) {
             setSearchResult(foundWord.meaning);
@@ -21,7 +20,7 @@ const Dictionary = () => {
 
     return (
         <div className="x-dictionary">
-            <h1>Dictionary App</h1>
+            <h1>XDictionary</h1>
             <div className="search-container">
                 <input
                     type="text"
@@ -32,7 +31,7 @@ const Dictionary = () => {
                 <button onClick={handleSearch}>Search</button>
             </div>
             <div className="result-container">
-                <h3>Definition:</h3>{searchResult && (
+                {searchResult && (
                     <p>{searchResult}</p>
                 )}
             </div>
@@ -40,4 +39,4 @@ const Dictionary = () => {
     );
 };
 
-export default Dictionary;
+export default XDictionary;
