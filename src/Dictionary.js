@@ -31,7 +31,7 @@ const XDictionary = () => {
                 <button onClick={handleSearch}>Search</button>
             </div>
             <div className="result-container">
-                {searchResult && (
+                <h3>Definition:</h3>{searchResult && (
                     <p>{searchResult}</p>
                 )}
             </div>
