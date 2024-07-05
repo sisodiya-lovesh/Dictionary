@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import initialDictionary from './dictionaryData.json'; // Import JSON data
+import initialDictionary from './dictionarydata.json'; // Import JSON data
 
 const XDictionary = () => {
     // State hooks
@@ -20,7 +20,7 @@ const XDictionary = () => {
 
     return (
         <div className="x-dictionary">
-            <h1>XDictionary</h1>
+            <h1>Dictionary App</h1>
             <div className="search-container">
                 <input
                     type="text"
